@@ -1,0 +1,95 @@
+/* Basic styling for the slider */
+.slider {
+  position: relative;
+  width: 300px;
+}
+
+/* Viewport styling */
+.viewport {
+  width: 100%; /* Largeur de la fenêtre */
+  overflow: hidden;
+}
+
+/* Container for all slides */
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* Individual slide styling */
+.slide {
+  min-width: 300px; /* Largeur de chaque slide */
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: white;
+}
+
+/* Slide background colors */
+#s1 {
+  background: #ff7f50;
+}
+#s2 {
+  background: #4682b4;
+}
+#s3 {
+  background: #3cb371;
+}
+
+label {
+  background: rgba(78, 51, 0, 0.664);
+  height: 70px;
+  width: 70px;
+  text-align: center;
+  margin: auto;
+  font-size: 4rem;
+  font-weight: 900;
+  border-radius: 15px;
+}
+
+label:hover {
+  background: blanchedalmond;
+  color: black;
+}
+
+/* Hide radio buttons */
+input[type="radio"] {
+  display: none;
+}
+
+/* Move slides based on selected radio button */
+#slide1:checked ~ .viewport .slides {
+  transform: translateX(0);
+}
+
+#slide2:checked ~ .viewport .slides {
+  transform: translateX(-300px); /* Déplace de la largeur d'un slide */
+}
+
+#slide3:checked ~ .viewport .slides {
+  transform: translateX(
+    -600px
+  ); /* Déplace de deux fois la largeur d'un slide */
+}
+
+/* Style for navigation buttons */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.nav label {
+  cursor: pointer;
+  padding: 5px 10px;
+  background: #ddd;
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+
+.nav label:hover {
+  background: #aaa;
+}
